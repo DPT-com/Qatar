@@ -166,4 +166,4 @@ a.contact-card:hover { transform: translateY(-4px); border-color: var(--gold); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
-}
+           }
