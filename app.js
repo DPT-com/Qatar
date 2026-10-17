@@ -1,180 +1,204 @@
+const translations = {
+  en: {
+    navHome: "Home",
+    navCategories: "Categories",
+    navAbout: "Who We Are",
+    navContact: "Contact",
 
-(() => {
-  "use strict";
+    heroEyebrow: "ELEGANCE IN EVERY DETAIL",
+    heroTitle: 'Style That Speaks. <em>Quality That Lasts.</em>',
+    heroText: "Discover timeless clothing accessories designed to complement your style with elegance and confidence.",
+    explore: "Explore Categories",
+    learnMore: "Learn More",
+    heroNote: "Based in Qatar",
+    labelStyle: "Timeless Style",
+    labelQuality: "Attention to Detail",
 
-  const $ = (selector) => document.querySelector(selector);
-  const menuToggle = $("#menuToggle");
-  const siteNav = $("#siteNav");
-  const languageToggle = $("#languageToggle");
+    categoryEyebrow: "OUR COLLECTION",
+    categoryTitle: "Explore Our Categories",
+    categoryText: "A selection of accessories for everyday style and special occasions.",
 
-  const translations = {
-    en: {
-      navHome: "Home",
-      navProducts: "Categories",
-      navAbout: "About us",
-      navContact: "Contact",
-      eyebrow: "QATAR · TRUSTED TRADING",
-      heroTitle: "Everyday essentials.<br><em>Elevated style.</em>",
-      heroText: "Explore clothing accessories and practical lifestyle essentials from DIMA PLUS TRADING W.L.L.",
-      explore: "Explore categories ↘",
-      contactUs: "Contact us",
-      qatarBased: "Based in Qatar",
-      ourRange: "OUR RANGE",
-      categoriesTitle: "Browse categories",
-      categoriesIntro: "Discover categories related to our registered trading activity.",
-      ties: "Ties & bow ties",
-      tiesDesc: "Classic neckties, bow ties and formalwear accessories.",
-      gloves: "Gloves & braces",
-      glovesDesc: "Practical gloves, suspenders and clothing accessories.",
-      beads: "Prayer beads (tasbih)",
-      beadsDesc: "Prayer beads and related everyday accessories.",
-      umbrellas: "Umbrellas",
-      umbrellasDesc: "Useful umbrellas for day-to-day weather protection.",
-      catalogNote: "These are category examples, not confirmed live inventory. Product details and availability will be added after the range is selected.",
-      aboutEyebrow: "WHO WE ARE",
-      aboutTitle: "A considered approach to everyday trading.",
-      aboutText: "DIMA PLUS TRADING W.L.L. is a Qatar-based trading company focused on clothing accessories and practical everyday items. We aim to make discovering our range straightforward and communication easy.",
-      valueClear: "Clear communication",
-      valueUseful: "Useful essentials",
-      valueLocal: "Qatar-based contact",
-      getInTouch: "GET IN TOUCH",
-      contactTitle: "Let's talk.",
-      contactText: "For enquiries about our company and product categories, contact us directly.",
-      whatsapp: "WHATSAPP",
-      email: "EMAIL",
-      address: "ADDRESS",
-      addressText: "Building 488, Street 340, Zone 55, 1st Floor, Office 12, Qatar",
-      footerText: "Clothing accessories & lifestyle essentials · Qatar",
-      privacy: "Privacy",
-      terms: "Terms",
-      whatsappCta: "Chat on WhatsApp"
-    },
+    catOneKicker: "FORMAL STYLE",
+    catOne: "Ties & Accessories",
+    catOneText: "Elegant details for a polished look.",
 
-    ar: {
-      navHome: "الرئيسية",
-      navProducts: "الفئات",
-      navAbout: "من نحن",
-      navContact: "اتصل بنا",
-      eyebrow: "قطر · تجارة موثوقة",
-      heroTitle: "احتياجات يومية.<br><em>بأسلوب راقٍ.</em>",
-      heroText: "اكتشف إكسسوارات الملابس والمنتجات العملية من شركة ديما بلس للتجارة ذ.م.م.",
-      explore: "استكشف الفئات ↙",
-      contactUs: "اتصل بنا",
-      qatarBased: "مقرنا في قطر",
-      ourRange: "مجموعة منتجاتنا",
-      categoriesTitle: "تصفح الفئات",
-      categoriesIntro: "اكتشف فئات المنتجات المرتبطة بنشاطنا التجاري المسجل.",
-      ties: "ربطات العنق والفراشات",
-      tiesDesc: "ربطات عنق كلاسيكية وربطات فراشة وإكسسوارات الملابس الرسمية.",
-      gloves: "القفازات والحمالات",
-      glovesDesc: "قفازات عملية وحمالات وإكسسوارات للملابس.",
-      beads: "المسابح",
-      beadsDesc: "مسابح وإكسسوارات يومية ذات صلة.",
-      umbrellas: "المظلات",
-      umbrellasDesc: "مظلات عملية للحماية من تقلبات الطقس اليومية.",
-      catalogNote: "هذه أمثلة للفئات وليست مخزوناً مؤكداً للبيع حالياً. ستضاف تفاصيل المنتجات وتوفرها بعد اختيار المنتجات.",
-      aboutEyebrow: "من نحن",
-      aboutTitle: "نهج مدروس للتجارة والاحتياجات اليومية.",
-      aboutText: "ديما بلس للتجارة ذ.م.م. شركة مقرها قطر، تركز على إكسسوارات الملابس والمنتجات العملية اليومية. نسعى إلى تسهيل استكشاف منتجاتنا والتواصل معنا.",
-      valueClear: "تواصل واضح",
-      valueUseful: "منتجات عملية",
-      valueLocal: "تواصل من داخل قطر",
-      getInTouch: "تواصل معنا",
-      contactTitle: "يسعدنا تواصلكم.",
-      contactText: "للاستفسار عن الشركة وفئات المنتجات، يرجى التواصل معنا مباشرة.",
-      whatsapp: "واتساب",
-      email: "البريد الإلكتروني",
-      address: "العنوان",
-      addressText: "مبنى 488، شارع 340، منطقة 55، الطابق الأول، مكتب 12، قطر",
-      footerText: "إكسسوارات الملابس والمنتجات اليومية · قطر",
-      privacy: "الخصوصية",
-      terms: "الشروط",
-      whatsappCta: "تواصل عبر واتساب"
+    catTwoKicker: "EVERYDAY ESSENTIALS",
+    catTwo: "Gloves",
+    catTwoText: "Practical accessories with classic appeal.",
+
+    catThreeKicker: "TIMELESS TRADITION",
+    catThree: "Prayer Beads",
+    catThreeText: "Traditional accessories with a refined finish.",
+
+    catFourKicker: "DAILY COMFORT",
+    catFour: "Umbrellas",
+    catFourText: "Useful everyday essentials for changing weather.",
+
+    imageCaption: "QUALITY · STYLE · TRUST",
+
+    aboutSide: "OUR COMPANY",
+    aboutEyebrow: "GET TO KNOW US",
+    aboutTitle: "Who We Are",
+    aboutText: "DIMA PLUS TRADING W.L.L. is a Qatar-based company operating in the retail sale of clothing accessories. We aim to present useful, stylish and timeless accessories for different needs and occasions.",
+    aboutTextTwo: "Our business activity includes items such as gloves, ties, suspenders, prayer beads and umbrellas. We believe in clear communication, thoughtful selection and professional customer service.",
+    aboutLink: "Get in Touch",
+
+    contactEyebrow: "LET'S CONNECT",
+    contactTitle: "Contact Our Team",
+    contactText: "Have a question? Contact us using the details below.",
+    whatsappLabel: "WHATSAPP / PHONE",
+    whatsappDetail: "Message us directly",
+    emailLabel: "EMAIL",
+    emailDetail: "Send us an email",
+    addressLabel: "OUR ADDRESS",
+    addressTitle: "Doha, Qatar",
+    addressDetail: "Building 488, Street 340, Zone 55, 1st Floor, Office 12, Qatar.",
+
+    ctaEyebrow: "DIMA PLUS TRADING W.L.L.",
+    ctaTitle: "Let's Start a Conversation",
+    ctaText: "We welcome your enquiries.",
+    ctaButton: "Contact on WhatsApp",
+
+    footerText: "Clothing accessories and everyday essentials in Qatar.",
+    privacy: "Privacy Policy",
+    terms: "Terms & Conditions",
+    rights: "All rights reserved."
+  },
+
+  ar: {
+    navHome: "الرئيسية",
+    navCategories: "الفئات",
+    navAbout: "من نحن",
+    navContact: "اتصل بنا",
+
+    heroEyebrow: "الأناقة في كل التفاصيل",
+    heroTitle: 'أسلوب يعبّر عنك. <em>وجودة تدوم.</em>',
+    heroText: "اكتشف إكسسوارات الملابس الكلاسيكية التي تكمل أناقتك بثقة وتميّز.",
+    explore: "اكتشف الفئات",
+    learnMore: "اعرف المزيد",
+    heroNote: "مقرنا في قطر",
+    labelStyle: "أناقة خالدة",
+    labelQuality: "اهتمام بالتفاصيل",
+
+    categoryEyebrow: "مجموعتنا",
+    categoryTitle: "اكتشف فئاتنا",
+    categoryText: "مجموعة مختارة من الإكسسوارات للاستخدام اليومي والمناسبات.",
+
+    catOneKicker: "الأناقة الرسمية",
+    catOne: "ربطات العنق والإكسسوارات",
+    catOneText: "تفاصيل أنيقة لإطلالة متكاملة.",
+
+    catTwoKicker: "مستلزمات يومية",
+    catTwo: "القفازات",
+    catTwoText: "إكسسوارات عملية بطابع كلاسيكي.",
+
+    catThreeKicker: "تراث خالد",
+    catThree: "المسابح",
+    catThreeText: "إكسسوارات تقليدية بلمسة راقية.",
+
+    catFourKicker: "الراحة اليومية",
+    catFour: "المظلات",
+    catFourText: "مستلزمات عملية لمختلف الظروف الجوية.",
+
+    imageCaption: "الجودة · الأناقة · الثقة",
+
+    aboutSide: "شركتنا",
+    aboutEyebrow: "تعرّف علينا",
+    aboutTitle: "من نحن",
+    aboutText: "ديما بلس للتجارة ذ.م.م. شركة مقرها قطر، تعمل في مجال بيع إكسسوارات الملابس بالتجزئة. نسعى إلى تقديم إكسسوارات عملية وأنيقة تناسب الاحتياجات والمناسبات المختلفة.",
+    aboutTextTwo: "يشمل نشاطنا التجاري منتجات مثل القفازات وربطات العنق والحمالات والمسابح والمظلات. ونؤمن بأهمية التواصل الواضح والاختيار المدروس وخدمة العملاء باحترافية.",
+    aboutLink: "تواصل معنا",
+
+    contactEyebrow: "يسعدنا تواصلكم",
+    contactTitle: "تواصل مع فريقنا",
+    contactText: "هل لديك استفسار؟ تواصل معنا عبر التفاصيل التالية.",
+    whatsappLabel: "واتساب / الهاتف",
+    whatsappDetail: "راسلنا مباشرة",
+    emailLabel: "البريد الإلكتروني",
+    emailDetail: "أرسل لنا رسالة",
+    addressLabel: "عنواننا",
+    addressTitle: "الدوحة، قطر",
+    addressDetail: "مبنى 488، شارع 340، منطقة 55، الطابق الأول، مكتب 12، قطر.",
+
+    ctaEyebrow: "ديما بلس للتجارة ذ.م.م.",
+    ctaTitle: "يسعدنا بدء التواصل معكم",
+    ctaText: "نرحب باستفساراتكم.",
+    ctaButton: "تواصل عبر واتساب",
+
+    footerText: "إكسسوارات الملابس والمستلزمات اليومية في قطر.",
+    privacy: "سياسة الخصوصية",
+    terms: "الشروط والأحكام",
+    rights: "جميع الحقوق محفوظة."
+  }
+};
+
+const languageToggle = document.getElementById("languageToggle");
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+let currentLanguage = "en";
+
+function setLanguage(language) {
+  currentLanguage = language;
+
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    const translatedText = translations[language][key];
+
+    if (translatedText !== undefined) {
+      element.innerHTML = translatedText;
     }
-  };
+  });
 
-  let currentLanguage = "en";
+  languageToggle.textContent = language === "en" ? "العربية" : "English";
 
-  function setLanguage(language) {
-    currentLanguage = language;
-    const rtl = language === "ar";
+  languageToggle.setAttribute(
+    "aria-label",
+    language === "en" ? "Switch to Arabic" : "Switch to English"
+  );
 
-    document.documentElement.lang = language;
-    document.documentElement.dir = rtl ? "rtl" : "ltr";
-    document.body.dir = rtl ? "rtl" : "ltr";
+  document.title = language === "en"
+    ? "DIMA PLUS TRADING W.L.L. | Qatar"
+    : "ديما بلس للتجارة ذ.م.م. | قطر";
 
-    document.querySelectorAll("[data-i18n]").forEach((element) => {
-      const key = element.dataset.i18n;
-      const translated = translations[language][key];
+  closeMenu();
+}
 
-      if (translated !== undefined) {
-        element.innerHTML = translated;
-      }
-    });
+languageToggle.addEventListener("click", () => {
+  setLanguage(currentLanguage === "en" ? "ar" : "en");
+});
 
-    languageToggle.textContent = rtl ? "English" : "العربية";
-    languageToggle.setAttribute(
-      "aria-label",
-      rtl ? "Switch to English" : "التبديل إلى العربية"
-    );
+function closeMenu() {
+  mainNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+}
 
-    document.title = rtl
-      ? "ديما بلس للتجارة ذ.م.م. | قطر"
-      : "DIMA PLUS TRADING W.L.L. | Qatar";
+menuToggle.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
 
-    menuToggle.setAttribute(
-      "aria-label",
-      siteNav.classList.contains("open")
-        ? (rtl ? "إغلاق القائمة" : "Close menu")
-        : (rtl ? "فتح القائمة" : "Open menu")
-    );
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+});
+
+mainNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
   }
+});
 
-  function closeMenu() {
-    siteNav.classList.remove("open");
-    menuToggle.classList.remove("active");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute(
-      "aria-label",
-      currentLanguage === "ar" ? "فتح القائمة" : "Open menu"
-    );
-  }
+document.getElementById("currentYear").textContent =
+  new Date().getFullYear();
 
-  menuToggle.addEventListener("click", () => {
-    const open = !siteNav.classList.contains("open");
-
-    siteNav.classList.toggle("open", open);
-    menuToggle.classList.toggle("active", open);
-    menuToggle.setAttribute("aria-expanded", String(open));
-
-    menuToggle.setAttribute(
-      "aria-label",
-      open
-        ? (currentLanguage === "ar" ? "إغلاق القائمة" : "Close menu")
-        : (currentLanguage === "ar" ? "فتح القائمة" : "Open menu")
-    );
-  });
-
-  siteNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  languageToggle.addEventListener("click", () => {
-    setLanguage(currentLanguage === "en" ? "ar" : "en");
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 680) closeMenu();
-  });
-
-  const yearElement = $("#year");
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-  setLanguage("en");
-})();
+setLanguage("en");
+                          
